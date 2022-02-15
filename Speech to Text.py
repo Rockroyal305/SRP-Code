@@ -1,4 +1,4 @@
-'''if problems, try pip install google-cloud-speech and try again'''
+# if problems, try pip install google-cloud-speech and try again
 
 # Imports the Google Cloud client library
 from google.cloud import speech

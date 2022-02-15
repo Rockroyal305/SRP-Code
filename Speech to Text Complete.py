@@ -1,12 +1,5 @@
 import os
 from google.cloud import speech
-import neuspell
-from neuspell import BertChecker
-import time
-
-# select spell checkers & load
-checker = BertChecker()
-checker.from_pretrained()
 
 '''if problems, try pip install google-cloud-speech and try again
 imports the Google Cloud client library'''
@@ -14,7 +7,6 @@ os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = r"C:\Users\rockr\Desktop\Code\SRP
 
 # instantiates a client
 client = speech.SpeechClient()
-time.sleep(15)
 
 # the name of the audio file to transcribe
 for i in range(10, 19, 1):
@@ -35,7 +27,7 @@ for i in range(10, 19, 1):
 
     results = []
     for result in response.results:
-        s = checker.correct(format(result.alternatives[0].transcript))
+        s = result.alternatives[0].transcript
         if(s[0] == ' '):
             s = s[:0] + s[1:]
         print(s)

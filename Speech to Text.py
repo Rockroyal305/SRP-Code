@@ -10,7 +10,7 @@ os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = r"C:\Users\rockr\Desktop\Code\SRP
 client = speech.SpeechClient()
 
 # The name of the audio file to transcribe
-gcs_uri = "gs://srp_speech_to_text/SRP Audio Files/Speech10_8k.wav"
+gcs_uri = "gs://srp_speech_to_text/Speech10_8k.wav"
 
 audio = speech.RecognitionAudio(uri=gcs_uri)
 
@@ -30,8 +30,12 @@ config = speech.RecognitionConfig(
 # Detects speech in the audio file
 response = client.recognize(config=config, audio=audio)
 
+print("\n")
+
 for result in response.results:
     s = (format(result.alternatives[0].transcript))
     if(s[0] == ' '):
         s = s[:0] + s[1:]
     print(s)
+    print("Confidence: {}%".format(int(100*result.alternatives[0].confidence)))
+    print("\n")

@@ -3,7 +3,7 @@ from google.cloud import speech
 
 '''if problems, try pip install google-cloud-speech and try again
 imports the Google Cloud client library'''
-os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = r"C:\Users\rockr\Desktop\Code\SRP\SRP_Code\sample-key.json"
+os.environ["GOOGLE_APPLICATION_CREDENTIALS"] = r"C:\Users\rockr\Desktop\Code\SRP\sample-key.json"
 
 # instantiates a client
 client = speech.SpeechClient()

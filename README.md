@@ -4,9 +4,9 @@
 
 ```mermaid
   graph TD;
-      Input Audio File --> Google Speech to Text API;
-      Google Speech to Text API --> List of Sentences;
-      Input Text File --> List of Sentences;
-      List of Sentences --> Glide Text to Image AI;
-      Glide Text to Image AI --> Output Image for Each Sentence
+      A[Input Audio File] --> B[Google Speech to Text API];
+      B[Google Speech to Text API] --> C[List of Sentences];
+      D[Input Text File] --> C[List of Sentences];
+      C[List of Sentences] --> E[Glide Text to Image AI];
+      E[Glide Text to Image AI] --> F[Output Image for Each Sentence]
 ```
